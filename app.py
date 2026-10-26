@@ -11,7 +11,6 @@ OPERACOES = {
 
 
 def calcular(opcao, num1, num2):
-    """Mesma lógica da calculadora de terminal, agora em uma função."""
     if opcao == "1":
         return num1 + num2
     if opcao == "2":
@@ -57,6 +56,5 @@ def index():
 
 
 if __name__ == "__main__":
-    # host 0.0.0.0 permite acesso de fora do container (útil no Docker)
     app.run(host="0.0.0.0", port=5000, debug=True)
 
