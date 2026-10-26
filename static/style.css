@@ -38,7 +38,6 @@ h1 {
   font-weight: 600;
 }
 
-/* O visor é o elemento principal da tela */
 .visor {
   display: block;
   min-height: 5rem;
@@ -149,7 +148,6 @@ button:focus-visible,
   outline-offset: 2px;
 }
 
-/* Botão de divisão (/) sempre verde; quando selecionado ganha um anel */
 .op:last-child input + span {
   background: var(--verde);
   border-color: var(--verde);
