@@ -1,0 +1,17 @@
+name: Meu primeiro workflow
+
+on: [push]
+
+jobs:
+  exemplo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Exibir mensagem
+        run: echo "Ola, DevVops!"
+
+      - name: Mostrar sistema
+        run: uname -a
+
+      - name: Mostrar data
+        run: date
