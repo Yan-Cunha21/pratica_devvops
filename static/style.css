@@ -5,6 +5,7 @@
   --texto: #e8eef7;
   --texto-suave: #9fb2cc;
   --destaque: #3ddc97;
+  --verde: #22c55e;
   --erro: #ff7b7b;
   --raio: 14px;
 }
@@ -130,12 +131,12 @@ legend {
 button {
   width: 100%;
   padding: 0.85rem;
-  background: var(--destaque);
+  background: var(--verde);
   border: 0;
   border-radius: 8px;
   font-size: 1rem;
   font-weight: 700;
-  color: var(--fundo);
+  color: #04210f;
   cursor: pointer;
 }
 
@@ -146,4 +147,16 @@ button:focus-visible,
 .op input:focus-visible + span {
   outline: 3px solid var(--texto);
   outline-offset: 2px;
+}
+
+/* Botão de divisão (/) sempre verde; quando selecionado ganha um anel */
+.op:last-child input + span {
+  background: var(--verde);
+  border-color: var(--verde);
+  color: #04210f;
+  font-weight: 700;
+}
+
+.op:last-child input:checked + span {
+  box-shadow: 0 0 0 3px var(--painel), 0 0 0 5px var(--verde);
 }
