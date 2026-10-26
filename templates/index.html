@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="calc">
+    <h1>Calculadora</h1>
+
+    <output class="visor {% if erro %}visor--erro{% endif %}" aria-live="polite">
+      {% if erro %}
+        {{ erro }}
+      {% elif resultado is not none %}
+        {{ resultado }}
+      {% else %}
+        0
+      {% endif %}
+    </output>
+
+    <form method="post" action="{{ url_for('index') }}">
+      <div class="campos">
+        <label>
+          Primeiro número
+          <input type="text" name="num1" inputmode="decimal" value="{{ valores.num1 }}" required>
+        </label>
+        <label>
+          Segundo número
+          <input type="text" name="num2" inputmode="decimal" value="{{ valores.num2 }}" required>
+        </label>
+      </div>
+
+      <fieldset class="operacoes">
+        <legend>Operação</legend>
+        {% for chave, simbolo in operacoes.items() %}
+          <label class="op">
+            <input type="radio" name="opcao" value="{{ chave }}" {% if valores.opcao == chave %}checked{% endif %}>
+            <span>{{ simbolo }}</span>
+          </label>
+        {% endfor %}
+      </fieldset>
+
+      <button type="submit">Calcular</button>
+    </form>
+  </main>
+</body>
+</html>
