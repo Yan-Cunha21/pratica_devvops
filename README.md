@@ -29,7 +29,7 @@ cd pratica01_devvops
 
 3) Execute a calculadora no terminal
 ``````
-python calculadora.py
+python app.py
 ou
 ctrl + f5
 ``````
